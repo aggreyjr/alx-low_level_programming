@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(void)
 	/**
-	 * printout a statement  followed by a new line
+	 * main - printout a statement  followed by a new line
 	 *return 0
 	 */
 {
