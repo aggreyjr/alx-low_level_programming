@@ -1,5 +1,10 @@
 #include<stdio.h>
-int main()
+
+/**
+ * main - various computer size
+ * Return: 0(success)
+ */
+int main(void)
 {
 	char a;
 	int b;
@@ -10,5 +15,5 @@ int main()
 	printf("Size of an int:%lu byte(s)\n", (unassigned long)sizeof(b));
 	printf("Size of long int:%lu byte(s)\n", (unassigned long)sizeof(c));
 	printf("Size of float:%li byte(s)\n", (unassigned long)sizeof(f));
-	return 0;
+	return (0);
 }
