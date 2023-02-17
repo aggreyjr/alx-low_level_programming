@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
-
+/**
+ * main - A program for positive and negative checker
+ * Return: o(success)
+ */
 /* betty style doc for function main goes there */
 int main(void)
 {
