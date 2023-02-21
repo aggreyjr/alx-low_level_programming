@@ -2,7 +2,7 @@
 
 /**
  * _islower - main function
- * c - for output
+ * @c: for checking
  * return: 0 always
  */
 
