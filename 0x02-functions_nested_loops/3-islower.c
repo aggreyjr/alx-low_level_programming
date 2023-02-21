@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * _islower - main functio
+ * _islower - main function
+ * c - for output
  * return: 0 always
  */
 
