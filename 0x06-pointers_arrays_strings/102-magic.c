@@ -1,11 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - you are not allowed to code anything else than this line of code
- * Remember:
- * you are not allowed to use a
- * you are not allowed to modify p
- * only one statement
+ * main - this is the program main
+ * do not use a and modify p
  * Return: (0) success
  */
 
@@ -19,6 +16,6 @@ int main(void)
 	p = &n;
 	*(p + 5) = 98;
 
-	pintf("a[2] = %d\n", a[2]);
+	printf("a[2] = %d\n", a[2]);
 	return (0);
 }
