@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * main - main function of the program
+ * Return: (0)success
+ */
+
 int main(void)
 {
 	int n;
@@ -9,8 +14,10 @@ int main(void)
 	a[2] = 1024;
 	p = &n;
 	/*
-	 * write your line of code here...
+	 * write your line of code here.
 	 * Remember:
+	 * main - magic file
+	 * Return: (0)success
 	 * - you are not allowed to use a
 	 *   - you are not allowed to modify p
 	 *   - only one statement
