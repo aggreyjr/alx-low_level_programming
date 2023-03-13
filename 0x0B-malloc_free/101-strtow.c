@@ -21,7 +21,6 @@ int count_word(char *s)
 			w++;
 		}
 	}
-}
 /**
  * **strtow - splits a string into words
  * @str: string to split
