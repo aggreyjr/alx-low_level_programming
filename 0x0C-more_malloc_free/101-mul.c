@@ -1,40 +1,25 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-/**
- * realloc - reallocates a memory block using malloc and free
- * @ptr: pointer to the memory previously allocated with call to '''
- * malloc : malloc(old_size)'''.
- * @old_size: size in bytes allocated for ptr
- * @new_size: size in bytes of new memory block
- * Return: pointer to new mem block, NULL or ptr
- */
-void *realloc(void *ptr, unsigned int old_size, unsigned int new_size)
-{
-	char  *nptr;
-	unsigned int i;
 
-	if (new_size == old_size)
-		return (ptr);
-	if ((new_size == 0) && (ptr != NULL))
+/**
+ * main - this is the main part of the prog
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return: 1 if false, or 0 if successful
+ */
+int main(int argc, char *argv[])
+{
+	if (argc != 3)
 	{
-		free(ptr);
-		return (NULL);
+		printf("Error\n");
+		return (1);
 	}
-	if (ptr == NULL)
-	{
-		nptr = malloc(new_size);
-		if (nptr == NULL)
-			return (NULL);
-	}
-	if (new_size > old_size && (ptr != NULL))
-	{
-		nptr = malloc(new_size);
-		if (nptr == NULL)
-			return (nptr);
-		for (i = 0; i < old_size; i++)
-			nptr[i] = *((char *)ptr + 1);
-		free(ptr);
-	}
-	return (nptr);
+	long long a = atoll(argv[1]);
+	long long b = atoll(argv[2]);
+
+	printf("%lld\n", a * b);
+
+	return (0);
 }
 
