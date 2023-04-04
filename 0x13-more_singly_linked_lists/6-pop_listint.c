@@ -1,36 +1,23 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * main - check the code
+ * pop_listint - deletes the head node
+ * @head: a double pointer
  *
- * Return: Always 0.
+ *Return: empty
  */
-int main(void)
+int pop_listint(listint_t **head)
 {
-	listint_t *head;
+	listint_t *start;
 	int n;
 
-	head = NULL;
-	add_nodeint_end(&head, 0);
-	add_nodeint_end(&head, 1);
-	add_nodeint_end(&head, 2);
-	add_nodeint_end(&head, 3);
-	add_nodeint_end(&head, 4);
-	add_nodeint_end(&head, 98);
-	add_nodeint_end(&head, 402);
-	add_nodeint_end(&head, 1024);
-	print_listint(head);
-	n = pop_listint(&head);
-	printf("- %d\n", n);
-	print_listint(head);
-	n = pop_listint(&head);
-	printf("- %d\n", n);
-	print_listint(head);
-	free_listint2(&head);
-	printf("%p\n", (void *)head);
-	return (0);
+	if (head == NULL || *head == NULL)
+		return (0);
+	start = *head;
+	*head = start->next;
+	n = start->n;
+	free(start);
+	return (n);
 }
 
