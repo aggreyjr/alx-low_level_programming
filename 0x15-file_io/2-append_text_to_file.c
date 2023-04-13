@@ -31,5 +31,5 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (r == -1)
 		return (-1);
 
-	return (1);
+	return (2);
 }
