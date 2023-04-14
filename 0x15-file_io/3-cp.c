@@ -27,18 +27,18 @@ char *create_buffer(char *file)
 }
 /**
  * close_file - closes file descriptors
- * @ol: file descriptor to be closed.
+ * @fd: file descriptor to be closed.
  */
 
-void close_file(int ol)
+void close_file(int fd)
 {
 	int k;
 
-	k = close(ol);
+	k = close(fd);
 
 	if (k == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: cannot close ol %d\n", ol);
+		dprintf(STDERR_FILENO, "Error: cannot close ol %d\n", fd);
 		exit(100);
 	}
 }
