@@ -6,7 +6,7 @@ char *create_buffer(char *file);
 void close_file(int ol);
 
 /**
- * create_beffer - Allocates 1024bytes for buffer.
+ * create_buffer - Allocates 1024bytes for buffer.
  * @file: the name of the file buffer is stroring chars for.
  * Return: a pointer to the newly-allocated buffer.
  */
@@ -69,11 +69,10 @@ int main(int argc, char *argv[])
 	t = read(from, buffer, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do
-	{
+	do {
 		if (from == -1 || t == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Cannot read from file %s\n" ,argv[1]);
+			dprintf(STDERR_FILENO, "Error: Cannot read from file %s\n", argv[1]);
 			free(buffer);
 			exit(98);
 		}
@@ -88,8 +87,8 @@ int main(int argc, char *argv[])
 
 		t = read(from, buffer, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
-	}
-	while (t > 0);
+	} while (t > 0);
+
 	free(buffer);
 	close_file(from);
 	close_file(to);
