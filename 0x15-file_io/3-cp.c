@@ -36,7 +36,7 @@ void close_file(int fd)
 
 	if (k == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: cannot close ol %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: cannot close fd %d\n", fd);
 		exit(100);
 	}
 }
