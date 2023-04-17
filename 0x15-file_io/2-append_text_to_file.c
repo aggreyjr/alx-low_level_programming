@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * append_text_to_file - Appends text at the end of a file
- * @filename: Name of the file to append to
- * @text_content: The text to append
- * Return: 1 on success, -1 on failure
+ * append_text_to_file - function that creates a file
+ * @filename: name of file to be manipulated
+ * @text_content: text to be added into file
+ * Return: 1 (success) or -1 (fail)
  */
-
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, len, b;
+	int fd, len = 0;
+	ssize_t q;
 
-	if (filename == NULL)
+	if (!filename)
 		return (-1);
 
 	fd = open(filename, O_WRONLY | O_APPEND);
@@ -20,15 +20,22 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		len = strlen(text_content);
-		b = write(fd, text_content, len);
+		while (text_content[len] != '\0')
+		len++;
 
-		if (b == -1 || b != len)
+		q = write(fd, text_content, len);
+		if (q == -1 || q != len)
 		{
 			close(fd);
 			return (-1);
 		}
 	}
+	else
+	{
+		close(fd);
+		return (1);
+	}
+
 	close(fd);
 	return (1);
 }
