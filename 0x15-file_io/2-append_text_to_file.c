@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * append_text_to_file - function that creates a file
+ * append_text_to_file - function to create a file
  * @filename: name of file to be manipulated
  * @text_content: text to be added into file
- * Return: 1 (success) or -1 (fail)
+ * Return: 1 (success) or -1 (failure)
  */
+
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, len = 0;
-	ssize_t q;
+	ssize_t f;
 
 	if (!filename)
 		return (-1);
@@ -23,8 +24,8 @@ int append_text_to_file(const char *filename, char *text_content)
 		while (text_content[len] != '\0')
 		len++;
 
-		q = write(fd, text_content, len);
-		if (q == -1 || q != len)
+		f = write(fd, text_content, len);
+		if (f == -1 || f != len)
 		{
 			close(fd);
 			return (-1);
