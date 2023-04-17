@@ -6,20 +6,20 @@ void close_file(int fd);
 /**
  * create_buff - creates buffer of 1024
  * @file: file for which buffer is created
- *
  * Return: Pointer
  */
+
 char *create_buff(char *file)
 {
-	char *buffer;
+	char *buff;
 
-	buffer = malloc(sizeof(char) * 1024);
-	if (!buffer)
+	buff = malloc(sizeof(char) * 1024);
+	if (!buff)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
-	return (buffer);
+	return (buff);
 }
 
 /**
