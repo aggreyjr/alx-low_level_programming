@@ -1,8 +1,9 @@
 #include "lists.h"
 
 /**
- *  dlistint_len - prints all the elements of a doubly linked lists
- * @h: pointer to doubly linked lists
+ *  dlistint_len - prints all the elements of a DLL
+ * @h: pointer to DLL
+ *
  * Return: number of nodes
  */
 size_t dlistint_len(const dlistint_t *h)
