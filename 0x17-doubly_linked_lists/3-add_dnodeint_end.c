@@ -3,10 +3,10 @@
 /**
  *  add_dnodeint_end - function that adds a new node at the end of a doubly linked list
  * @head: double pointer to doubly linked list
- * @i: integer to be inserted into a new_node
+ * @n integer to be inserted into a new_node
  * Return: pointer to new_node (success) or NULL (fail)
  */
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int i)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node, *current;
 
@@ -15,7 +15,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int i)
 	if (!new_node)
 		return (NULL);
 
-	new_node->i = i;
+	new_node->n = n;
 	new_node->prev = NULL;
 	new_node->next = NULL;
 
