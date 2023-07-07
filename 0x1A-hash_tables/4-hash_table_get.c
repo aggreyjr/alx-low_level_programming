@@ -2,37 +2,26 @@
 
 /**
  * hash_table_get - retrieves a value associated with a key
- * @ht: the hash table you want to look into
- * @key: the key you are looking for
+ * @ht: table to retrieve value from
+ * @key: key to find value
  *
- * Return: the value associated with the element,
- * or NULL if key couldn’t be found
+ * Return: value associated with key, or NULL if key cannot be found
  */
-
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	/**
-	 * Validate table and key;
-	 */
-
-	hash_node_t *node;
 	unsigned long int index;
+	hash_node_t *tmp;
 
-	if (ht == NULL || key == NULL || *key == '\0')
-	{
+	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
+	    key == NULL || strlen(key) == 0)
 		return (NULL);
-	}
-
 	index = key_index((const unsigned char *)key, ht->size);
-	if (index >= ht->size)
+	tmp = ht->array[index];
+	while (tmp != NULL)
 	{
-		return (NULL);
+		if (strcmp(tmp->key, key) == 0)
+			return (tmp->value);
+		tmp = tmp->next;
 	}
-
-	node = ht->array[index];
-	while (node && strcmp(node->key, key) != 0)
-	{
-		node = node->next;
-	}
-	return ((node == NULL) ? NULL : node->value);
+	return (NULL);
 }
